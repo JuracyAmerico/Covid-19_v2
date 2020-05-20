@@ -1,6 +1,6 @@
 # Tableau Web Data Connector SDK
 
-Use o Conector de dados na Web do Tableau (Tableau Web Data Conector - WDC) para se conectar do Tableau diretamente a fontes de dados na web.
+Use o Conector de dados na Web do Tableau (Tableau Web Data Conector - WDC) para, a partir do Tableau se conectar diretamente a fontes de dados na web.
 
 [Visite a pagina com a documentação do projeto aqui](https://tableau.github.io/webdataconnector/).
 
