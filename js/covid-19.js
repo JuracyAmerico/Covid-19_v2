@@ -21,7 +21,7 @@
         {id:"confirmed", alias: "Confirmados", dataType: tableau.dataTypeEnum.float},
         {id:"confirmed_per_100k_inhabitants", alias: "Confirmados por 100k hab.", dataType: tableau.dataTypeEnum.int},
         {id:"date", alias: "Data", dataType: tableau.dataTypeEnum.date},
-        {id:"death_rate", alias: "Mortes/confirmados", dataType: tableau.dataTypeEnum.float, defaultFormat: {numberFormat: percenntage}, aggType: avg},
+        {id:"death_rate", alias: "Mortes/confirmados", dataType: tableau.dataTypeEnum.float,
         {id:"deaths", alias: "Fatalidades", dataType: tableau.dataTypeEnum.float},
         {id:"estimated_population_2019", alias: "População estimada 2019", dataType: tableau.dataTypeEnum.int},
         {id:"is_last", alias: "É a última atualização?", dataType: tableau.dataTypeEnum.string},
