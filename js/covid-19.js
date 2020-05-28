@@ -64,12 +64,14 @@
         var boletim_colunasTabela = {
             id: 'boletim',
             alias: 'boletim',
+            description: 'Tabela que lista os boletins publicados pelas Secretarias Estaduais de Saúde. Pode aparecer mais de um para a mesma data e podem existir dias em que as SES não publicam boletins',
             columns: boletim_colunas
         };
 
         var obito_cartorio_colunasTabela = {
             id: 'obito_cartorio',
             alias: 'obito_cartorio',
+            description: 'Essa tabela contém dados de óbitos registrados nos cartórios e disponíveis no Portal da Transparência do Registro Civil',
             columns: obito_cartorio_colunas
         };        
 
