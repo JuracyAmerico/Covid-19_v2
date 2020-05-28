@@ -24,7 +24,7 @@
         {id:"death_rate", alias: "Mortes/confirmados", dataType: tableau.dataTypeEnum.float, aggType: tableau.aggTypeEnum.avg, numberFormat: tableau.numberFormatEnum.percentage},
         {id:"deaths", alias: "Fatalidades", dataType: tableau.dataTypeEnum.float},
         {id:"estimated_population_2019", alias: "População estimada 2019", dataType: tableau.dataTypeEnum.int},
-        {id:"is_last", alias: "É a última atualização?", dataType: tableau.dataTypeEnum.string},
+        {id:"is_last", alias: "É a última atualização?", dataType: tableau.dataTypeEnum.bool},
         {id:"place_type", alias: "Tipo de local", dataType: tableau.dataTypeEnum.string},
         {id:"state", alias: "Estado", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.state_province}
         ];
@@ -37,28 +37,23 @@
         ];
 
         var caso_full_colunas = [
-        {id:"source_id", alias:"source_id", dataType: tableau.dataTypeEnum.string},
-        {id:"dataSintomas", alias:"dataSintomas", dataType: tableau.dataTypeEnum.datetime},
-        {id:"dataRegistro", alias:"dataRegistro", dataType: tableau.dataTypeEnum.datetime},
-        {id:"dataAtualizacao", alias:"dataAtualizacao", dataType: tableau.dataTypeEnum.datetime},
-        {id:"dataNascimento", alias:"dataNascimento", dataType: tableau.dataTypeEnum.datetime},
-        {id:"numeroNotificacao", alias:"numeroNotificacao", dataType: tableau.dataTypeEnum.string},
-        {id:"municipio", alias:"municipio", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.county},
-        {id:"estado", alias:"estado", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.state_province},
-        {id:"municipioNotificacao", alias:"municipioNotificacao", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.county},
-        {id:"estadoNotificacao", alias:"estadoNotificacao", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.state_province},
-        {id:"cep", alias:"cep", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.zip_code_postcode},
-        {id:"comorbidades", alias:"comorbidades", dataType: tableau.dataTypeEnum.bool},
-        {id:"numeroCnes", alias:"numeroCnes", dataType: tableau.dataTypeEnum.string},
-        {id:"confirmado", alias:"confirmado", dataType: tableau.dataTypeEnum.bool},
-        {id:"sexo", alias:"sexo", dataType: tableau.dataTypeEnum.string},
-        {id:"excluido", alias:"excluido", dataType: tableau.dataTypeEnum.bool},
-        {id:"fonte", alias:"fonte", dataType: tableau.dataTypeEnum.string},
-        {id:"idade", alias:"idade", dataType: tableau.dataTypeEnum.int},
-        {id:"febre", alias:"febre", dataType: tableau.dataTypeEnum.bool},
-        {id:"sinaisGravidade", alias:"sinaisGravidade", dataType: tableau.dataTypeEnum.bool},
-        {id:"sinaisRespiratorios", alias:"sinaisRespiratorios", dataType: tableau.dataTypeEnum.bool}
-        //{id:"@timestamp", alias:"@timestamp", dataType: tableau.dataTypeEnum.datetime}            
+        {id:"city", alias:"Cidade", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.county},
+        {id:"city_ibge_code", alias:"Cd Mun", dataType: tableau.dataTypeEnum.string, columnRole: tableau.columnRoleEnum.dimension},
+        {id:"date", alias:"Data", dataType: tableau.dataTypeEnum.date},
+        {id:"epidemiological_week", alias:"Semana Epidemiológica", dataType: tableau.dataTypeEnum.int},
+        {id:"estimated_population_2019", alias:"População Estimada", dataType: tableau.dataTypeEnum.int},
+        {id:"is_last", alias:"É a última atualização?", dataType: tableau.dataTypeEnum.bool},
+        {id:"is_repeated", alias:"É repetido", dataType: tableau.dataTypeEnum.bool},
+        {id:"last_available_confirmed", alias:"Confirmados do Último dia disponível", dataType: tableau.dataTypeEnum.int},
+        {id:"last_available_confirmed_per_100k_inhabitants", alias:"Confirmados do Último dia disponível por 100.000 habitantes", dataType: tableau.dataTypeEnum.float},
+        {id:"last_available_date", alias:"Data da qual o dado se refere", dataType: tableau.dataTypeEnum.date},
+        {id:"last_available_death_rate", alias:"Taxa de Fatalidade do Último Dia Disponível", dataType: tableau.dataTypeEnum.float, aggType: tableau.aggTypeEnum.avg, numberFormat: tableau.numberFormatEnum.percentage},
+        {id:"last_available_deaths", alias:"Fatalidade do Último Dia Disponível", dataType: tableau.dataTypeEnum.int},
+        {id:"new_confirmed", alias:"Novos Casos", dataType: tableau.dataTypeEnum.int},
+        {id:"new_deaths", alias:"Novas Mortes", dataType: tableau.dataTypeEnum.int},
+        {id:"order_for_place", alias:"Ordem do Registro", dataType: tableau.dataTypeEnum.int},
+        {id:"place_type", alias:"Tipo de local", dataType: tableau.dataTypeEnum.string},
+        {id:"state", alias:"Estado", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.state_province}                      
         ]
 
         var obito_cartorio_colunas = [
@@ -201,29 +196,24 @@
         
                 for (var i = 1, len = feat.length; i < len; i++) {  
                 tableData.push({  
-                    "source_id": feat[i].source_id,
-                    "dataSintomas": feat[i].dataSintomas,
-                    "dataRegistro": feat[i].dataRegistro,
-                    "dataAtualizacao": feat[i].dataAtualizacao,
-                    "dataNascimento": feat[i].dataNascimento,
-                    "numeroNotificacao": feat[i].numeroNotificacao,
-                    "municipio": feat[i].municipio,
-                    "estado": feat[i].estado,
-                    "municipioNotificacao": feat[i].municipioNotificacao,
-                    "estadoNotificacao": feat[i].estadoNotificacao,
-                    "cep": feat[i].cep,
-                    "comorbidades": feat[i].comorbidades,
-                    "numeroCnes": feat[i].numeroCnes,
-                    "confirmado": feat[i].confirmado,
-                    "sexo": feat[i].sexo,
-                    "excluido": feat[i].excluido,
-                    "fonte": feat[i].fonte,
-                    "idade": feat[i].idade,
-                    "febre": feat[i].febre,
-                    "sinaisGravidade": feat[i].sinaisGravidade,
-                    "sinaisRespiratorios": feat[i].sinaisRespiratorios
-                    //"@timestamp": feat[i].@timestamp
-                                         
+                    "city": feat[i].city,
+                    "city_ibge_code": feat[i].city_ibge_code,
+                    "date": feat[i].date,
+                    "epidemiological_week": feat[i].epidemiological_week,
+                    "estimated_population_2019": feat[i].estimated_population_2019,
+                    "is_last": feat[i].is_last,
+                    "is_repeated": feat[i].is_repeated,
+                    "last_available_confirmed": feat[i].last_available_confirmed,
+                    "last_available_confirmed_per_100k_inhabitants": feat[i].last_available_confirmed_per_100k_inhabitants,
+                    "last_available_date": feat[i].last_available_date,
+                    "last_available_death_rate": feat[i].last_available_death_rate,
+                    "last_available_deaths": feat[i].last_available_deaths,
+                    "new_confirmed": feat[i].new_confirmed,
+                    "new_deaths": feat[i].new_deaths,
+                    "order_for_place": feat[i].order_for_place,
+                    "place_type": feat[i].place_type,
+                    "state": feat[i].state
+                                                             
                 });  
                 }  
                 // Interagindo entre todas as paginas, para isso fazemos a variavel next = resp.next; para pegar proxima pagina com dados , se nao encontrar mais dados vai ser null
