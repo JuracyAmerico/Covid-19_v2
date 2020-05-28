@@ -57,20 +57,20 @@
         ]
 
         var obito_cartorio_colunas = [
-        {id:"date", alias:"date", dataType: tableau.dataTypeEnum.date},
-        {id:"deaths_covid19", alias:"deaths_covid19", dataType: tableau.dataTypeEnum.int},
-        {id:"deaths_pneumonia_2019", alias:"deaths_pneumonia_2019", dataType: tableau.dataTypeEnum.int},
-        {id:"deaths_pneumonia_2020", alias:"deaths_pneumonia_2020", dataType: tableau.dataTypeEnum.int},
-        {id:"deaths_respiratory_failure_2019", alias:"deaths_respiratory_failure_2019", dataType: tableau.dataTypeEnum.int},
-        {id:"deaths_respiratory_failure_2020", alias:"deaths_respiratory_failure_2020", dataType: tableau.dataTypeEnum.int},
-        {id:"epidemiological_week_2019", alias:"epidemiological_week_2019", dataType: tableau.dataTypeEnum.int},
-        {id:"epidemiological_week_2020", alias:"epidemiological_week_2020", dataType: tableau.dataTypeEnum.int},
-        {id:"new_deaths_covid19", alias:"new_deaths_covid19", dataType: tableau.dataTypeEnum.int},
-        {id:"new_deaths_pneumonia_2019", alias:"new_deaths_pneumonia_2019", dataType: tableau.dataTypeEnum.int},
-        {id:"new_deaths_pneumonia_2020", alias:"new_deaths_pneumonia_2020", dataType: tableau.dataTypeEnum.int},
-        {id:"new_deaths_respiratory_failure_2019", alias:"new_deaths_respiratory_failure_2019", dataType: tableau.dataTypeEnum.int},
-        {id:"new_deaths_respiratory_failure_2020", alias:"new_deaths_respiratory_failure_2020", dataType: tableau.dataTypeEnum.int},
-        {id:"state", alias:"state", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.state_province}
+        {id:"date", alias:"Data ", dataType: tableau.dataTypeEnum.date},
+        {id:"deaths_covid19", alias:"Fatalidades Covid19", dataType: tableau.dataTypeEnum.int},
+        {id:"deaths_pneumonia_2019", alias:"Fatalidades Pneumonia 2019", dataType: tableau.dataTypeEnum.int},
+        {id:"deaths_pneumonia_2020", alias:"Fatalidades Pneumonia 2020", dataType: tableau.dataTypeEnum.int},
+        {id:"deaths_respiratory_failure_2019", alias:"Fatalidades insuficiência respiratória 2019", dataType: tableau.dataTypeEnum.int},
+        {id:"deaths_respiratory_failure_2020", alias:"Fatalidades insuficiência respiratória 2020", dataType: tableau.dataTypeEnum.int},
+        {id:"epidemiological_week_2019", alias:"Semana epidemiológica 2019", dataType: tableau.dataTypeEnum.int},
+        {id:"epidemiological_week_2020", alias:"Semana epidemiológica 2020", dataType: tableau.dataTypeEnum.int},
+        {id:"new_deaths_covid19", alias:"Novas Mortes Covid19", dataType: tableau.dataTypeEnum.int},
+        {id:"new_deaths_pneumonia_2019", alias:"Novas Mortes Pneumonia 2019", dataType: tableau.dataTypeEnum.int},
+        {id:"new_deaths_pneumonia_2020", alias:"Novas Mortes Pneumonia 2020", dataType: tableau.dataTypeEnum.int},
+        {id:"new_deaths_respiratory_failure_2019", alias:"Novas Mortes Insuficiência Respiratória 2019", dataType: tableau.dataTypeEnum.int},
+        {id:"new_deaths_respiratory_failure_2020", alias:"Novas Mortes Insuficiência Respiratória 2020", dataType: tableau.dataTypeEnum.int},
+        {id:"state", alias:"Estado", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.state_province}
         ]
 
         //Definicao da Tabela.
