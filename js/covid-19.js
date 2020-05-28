@@ -73,7 +73,7 @@
         {id:"state", alias:"state", dataType: tableau.dataTypeEnum.string, geoRole: tableau.geographicRoleEnum.state_province}
         ]
 
-        //Definicao da Tabela
+        //Definicao da Tabela.
         var casos_tabela = {
             id: 'casos',
             alias: 'casos',
